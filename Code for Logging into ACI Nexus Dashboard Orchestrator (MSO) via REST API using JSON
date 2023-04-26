@@ -1,0 +1,16 @@
+Step 1: The first action to do, is to provide login credentials to log into the Orchestrator, receiving back an "authentication token" that represents the session, for use in the subsequent REST API calls.
+
+Procedure:
+	- Select "POST"
+	- Use URL https://<MSO_ip_add>:<port>/api/v1/auth/login
+	- Select Body, raw, and then select JSON
+	- Use the following script for the credentials 
+  
+Code:
+
+{
+    "userName": "<username>",
+    "userPasswd": "<password>",
+    "domain": "<domain>"
+}
+	- Click on Send Button
