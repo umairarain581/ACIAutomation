@@ -14,3 +14,38 @@ Code:
     "domain": "<domain>"
 }
 	- Click on Send Button
+	
+- The authentication token will be reflected in the below "Pretty" section.
+
+Note: Use the authentication token before get expires. The default timer is 20 minutes
+
+Step 2: Use the above token on authentication for an API call that gets the schema details.
+
+Procedure:
+	- Open a new TAB and select "Get"
+	- Use URL https://<MSO_ip_add>/api/v1/schemas
+	- Select Header, Write, and Select Authorization in the KEY section
+	- Under the Value section write Bearer and past the previously copied token
+	- Click on Send Button
+	
+Step 3: Use the above schema ID to "Get" the configuration script for further modification.
+
+Procedure:
+	- Open a new TAB and select "Get"
+	- Use URL https://<nd-node-ip>/mso/api/v1/schemas/<ID of chosen schema
+	- Select Header, Write, and Select Authorization in the KEY section
+	- Under the Value section write Bearer and past the previously copied token
+	- Select Body, raw, and then select JSON
+	- Click on Send Button
+
+Step 4: In this final Step we will use input method to push script
+
+Procedure:
+	- Open a new TAB and select "Input"
+	- Use URL https://<nd-node-ip>/mso/api/v1/schemas/<ID of chosen schema
+	- Select Header, Write, and Select Authorization in the KEY section
+	- Under the Value section write Bearer and past the previously copied token
+	- Select Body, raw, and then select JSON
+	- In the payload paste a modified script
+	- Click on Send Button
+	- Verify that the Status code is “200 OK”
